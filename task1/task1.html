@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            First work
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  *{
+    box-sizing: border-box;
+   }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+body
+{
+    line-height: 1;
+    font-family: Arial;
+    background-color: #EBEAE5;
+}
+.sm-header 
+{
+    float: left;
+    width: 100%;
+    background-color: #363636;
+}
+.sm-container
+ {
+    width: 100%;
+    max-width: 1000px;
+    display: block;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.sm-row
+{
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+}
+.sm-column 
+{
+    float: left;
+    width: 100%;
+
+}
+.sm-text-center
+{
+    text-align: center;
+}
+.sm-header nav 
+{
+    width: 100%;
+    margin: 20px 0;
+}
+.sm-header ul
+{
+    display: flex;
+    justify-content: center;
+}
+.sm-header ul a
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+}
+.sm-header li 
+{
+    margin-right: 20px;
+}
+.sm-header li:last-child 
+{
+    margin-right: 0;
+}
+
+.sm-body h1 
+{
+    float: left;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 30px;
+    font-family: monospace;
+    font-weight: 700;
+}
+.sm-column.sm-col-left 
+{
+    width: 40%;
+}
+.sm-column.sm-col-right 
+{
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+}
+.sm-outer-box 
+{
+    float: left;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #444;
+    overflow: hidden;
+}
+.sm-outer-row 
+{
+    float: left;
+    width: 100%;
+    padding: 20px;
+}
+.sm-rw1
+{
+    background-color: #EEEEEE;
+    position: relative;
+}
+.sm-rw2
+{
+    background-color: #FFF;
+}
+.sm-rw3
+{
+    background-color: #F7DC3C;
+}
+.sm-rw1 span {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    background-color: #444;
+    color: #FFF;
+    padding: 5px;
+}
+.sm-rw1 h4 
+{
+    float: right;
+    clear: both;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.sm-rw1 p 
+{
+    float: right;
+    text-align: right;
+    max-width: 240px;
+    width: 100%;
+    font-size: 12px;
+    font-style: italic;
+}
+.sm-rw2 h3 
+{
+    float: left;
+    width: 100%;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 45px;
+    line-height: 1.2;
+}
+.sm-rw3 h2 
+{
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #2E2E2C;
+    position: relative;
+    font-size: 250px;
+    font-weight: 700;
+}
+.sm-rw3 h2 strong 
+{
+    font-size: 20px;
+    line-height: 1;
+    left: 112px;
+    position: absolute;
+    color: #f8dc3c;
+    bottom: 22px;
+    text-transform: uppercase;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+}
+.sm-dflex
+{
+    display: flex;
+}
+.sm-col-right p
+{
+    font-size: 20px;
+    text-align: center;
+}
+.sm-col-right p+p 
+{
+    margin-top: 40px;
+}
+.sm-button 
+{
+    display: inline-block;
+    vertical-align: top;
+    background-color: #F98D37;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 15px 15px;
+    font-family: Arial;
+    font-weight: 700;
+    border-radius: 6px;
+}
+.sm-footer 
+{
+    float: left;
+    width: 100%;
+    background-color: #021926;
+    padding: 40px 0;
+}
+.sm-footer h4
+{
+    float: left;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+}
+.sm-footer .sm-button
+{
+    width: 80%;
+}
+
+/* Media Query */
+@media only screen and (max-width: 1000px)
+{
+    .sm-body .sm-dflex 
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sm-column.sm-col-left 
+    {
+        width: 100%;
+        max-width: 380px;
+    }
+    .sm-column.sm-col-right 
+    {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 30px;
+    }
+}
+@media only screen and (max-width: 610px)
+{
+    .sm-header ul
+    {
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (max-width: 420px)
+{
+    .sm-rw3 h2
+    {
+        font-size: 200px;
+        max-width: 250px;
+    }
+    .sm-rw3 h2 strong{font-size: 15px;left: 77px;
+    }
+    .sm-rw3 
+    {
+        display: flex;
+        justify-content: center;
+    }
+    .sm-rw1 p 
+    {
+        margin-top: 15px;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="sm-header">
+            <div class="sm-container">
+                <div class="sm-row">
+                    <div class="sm-column">
+                        <nav>
+                            <ul>
+                                <li><a href="#">The book series</a></li>
+                                <li><a href="#">Testimonials</a></li>
+                                <li><a href="#">The author</a></li>
+                                <li><a href="#">The Free resources</a></li>
+                            </ul>   
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Body -->
+    <section class="sm-body">
+        <div class="sm-container">
+            <div class="sm-row">
+            <div class="sm-column">
+                <h1 class="sm-text-center">You dont know Javascript</h1>
+            </div>
+            </div>
+            <div class="sm-row sm-dflex">
+                <div class="sm-column sm-col-left">
+                    <div class="sm-outer-box">
+                        <div class="sm-outer-row sm-rw1">
+                            <span>O'REALLY</span>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><strong>Author Name</strong></p>
+                            <h4>KYLE SIMPSON</h4>
+                        </div>
+                        <div class="sm-outer-row sm-rw2">
+                            <h3>Complete<br>Series</h3>
+                        </div>
+                        <div class="sm-outer-row sm-rw3">
+                            <h2>JS<strong>You Don't Know</strong></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm-column sm-col-right">
+                    <p>Don't just drift through javascript</p>
+                    <p>Understand how javascript works</p>
+                    <p>Start your journey through the bumby side of javascript</p>
+                    <a href="#" class="sm-button">ORDER YOUR COPY NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Footer -->
+    <footer class="sm-footer">
+        <div class="sm-container">
+            <div class="sm-row">
+                <div class="sm-column sm-text-center">
+                    <h4>The first ebook in the book series is absolutely free</h4>
+                    <a href="#" class="sm-button">FIND OUT MORE ABOUT THIS OFFER</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
